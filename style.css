@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at top, #ffe6f0, #fff);
+  padding: 20px;
+}
+
+.card {
+  width: min(650px, 95vw);
+  background: white;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: clamp(26px, 3vw, 36px);
+}
+
+#message {
+  margin: 0 0 18px;
+  color: #444;
+}
+
+.play-area {
+  position: relative;
+  height: 260px;
+  border-radius: 14px;
+  border: 2px dashed #ffd1e1;
+  background: #fff7fb;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.btn {
+  border: none;
+  padding: 14px 22px;
+  font-size: 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.12s ease, filter 0.12s ease;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.yes {
+  background: #ff3d7f;
+  color: white;
+  filter: drop-shadow(0 8px 14px rgba(255, 61, 127, 0.25));
+}
+
+.yes:hover {
+  filter: drop-shadow(0 10px 18px rgba(255, 61, 127, 0.35));
+}
+
+.no {
+  background: #111;
+  color: white;
+  position: absolute; /* IMPORTANT: allows us to move it */
+  left: 60%;
+  top: 55%;
+}
