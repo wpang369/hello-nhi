@@ -73,30 +73,20 @@ h1 {
   left: 60%;
   top: 55%;
 }
-.layout {
-  display: grid;
-  grid-template-columns: 1fr minmax(280px, 650px) 1fr;
+.layout{
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
   width: min(1100px, 100%);
 }
 
-.side-img {
-  width: min(220px, 25vw);
-  max-height: 420px;
-  object-fit: contain;
-}
-
-.side-img.left { justify-self: end; }
-.side-img.right { justify-self: start; }
-
 @media (max-width: 820px) {
-  .layout {
-    grid-template-columns: 1fr;
+  .layout{
+    flex-direction: column;
   }
-  .side-img {
-    width: min(260px, 70vw);
-    justify-self: center;
+  .side-img.left,
+  .side-img.right{
+    order: 2; /* puts images below the card; remove if you want them above */
   }
 }
-
