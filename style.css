@@ -73,6 +73,7 @@ h1 {
   left: 60%;
   top: 55%;
 }
+/* keep layout from stretching images weirdly */
 .layout{
   display: flex;
   align-items: center;
@@ -81,12 +82,19 @@ h1 {
   width: min(1100px, 100%);
 }
 
-@media (max-width: 820px) {
-  .layout{
-    flex-direction: column;
-  }
-  .side-img.left,
-  .side-img.right{
-    order: 2; /* puts images below the card; remove if you want them above */
+/* responsive side images */
+.side-img{
+  /* scale with screen size but keep sane min/max */
+  width: clamp(120px, 18vw, 260px);
+  height: auto;              /* keep aspect ratio */
+  max-width: 100%;           /* don’t overflow */
+  flex: 0 1 auto;            /* allow shrinking if needed */
+  object-fit: contain;       /* keep whole image visible */
+}
+
+/* on smaller screens, make them a bit smaller and stack nicely */
+@media (max-width: 820px){
+  .side-img{
+    width: min(70vw, 260px);
   }
 }
